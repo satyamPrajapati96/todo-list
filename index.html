@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow | To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <span class="eyebrow">YOUR PERSONAL WORKSPACE</span>
+        <h1>TaskFlow <span>✓</span></h1>
+        <p>Small steps. Big progress.</p>
+      </div>
+      <div class="date" id="today-date"></div>
+    </header>
+
+    <section class="stats">
+      <div class="stat">
+        <span>Total tasks</span>
+        <strong id="total-count">0</strong>
+      </div>
+      <div class="stat">
+        <span>Active</span>
+        <strong id="active-count">0</strong>
+      </div>
+      <div class="stat">
+        <span>Completed</span>
+        <strong id="completed-count">0</strong>
+      </div>
+    </section>
+
+    <section class="task-panel">
+      <h2 id="form-heading">Add a new task</h2>
+      <form id="task-form">
+        <input id="task-input" type="text"
+          placeholder="What do you need to do?"
+          maxlength="200" autocomplete="off" required>
+        <button id="submit-btn" class="primary" type="submit">+ Add Task</button>
+        <button id="cancel-edit" class="secondary hidden"
+          type="button">Cancel</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" aria-label="Filter tasks">
+          <button type="button" class="filter active"
+            data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter"
+            data-filter="active" aria-pressed="false">Active</button>
+          <button type="button" class="filter"
+            data-filter="completed" aria-pressed="false">Completed</button>
+        </div>
+        <button type="button" id="clear-completed" class="text-button">
+          Clear completed
+        </button>
+      </div>
+
+      <ul id="task-list" aria-live="polite"></ul>
+
+      <footer class="footer">
+        <span id="task-count">0 tasks left</span>
+        <span>Saved automatically in your browser</span>
+      </footer>
+      <p id="status-message" class="status" role="status"></p>
+    </section>
+  </main>
+</body>
+</html>
